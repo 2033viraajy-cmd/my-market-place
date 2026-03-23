@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Marketplace</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        .item { border: 1px solid black; padding: 10px; margin: 10px; }
+    </style>
+</head>
+
+<body>
+
+<h1>My Marketplace</h1>
+
+<h3>Sell something</h3>
+<input id="name" placeholder="Item name">
+<input id="price" placeholder="Price">
+<input id="contact" placeholder="Your contact">
+<button onclick="addItem()">Post</button>
+
+<h2>Items for Sale</h2>
+<div id="items"></div>
+
+<script>
+function addItem() {
+    let name = document.getElementById("name").value;
+    let price = document.getElementById("price").value;
+    let contact = document.getElementById("contact").value;
+
+    let itemDiv = document.createElement("div");
+    itemDiv.className = "item";
+    itemDiv.innerHTML = `
+        <h3>${name}</h3>
+        <p>Price: ${price}</p>
+        <p>Contact: ${contact}</p>
+    `;
+
+    document.getElementById("items").appendChild(itemDiv);
+}
+</script>
+
+</body>
+</html>
